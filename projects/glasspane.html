@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>glasspane | Nicole Nguyen</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Manrope:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<div class="wrap">
+<a class="logo" href="../index.html">nicole nguyen</a>
+<nav aria-label="Main" class="menu">
+<a href="../index.html">home</a>
+<a href="../index.html#projects">projects</a>
+<a href="../about.html">about me</a>
+</nav>
+</div>
+</header>
+<main class="detail">
+<h1>glasspane</h1>
+<div aria-hidden="true" class="detail-hero" style="background-image: url('../assets/hero-glasspane.jpg')"></div>
+<div class="meta">
+<div><h2>role</h2><p>Lead Product Manager</p></div>
+<div><h2>timeline</h2><p>Aug - Sep 2026</p></div>
+<div><h2>context</h2><p>Personal project</p></div>
+<div><h2>key skills</h2><ul><li>Requirements Scoping</li><li>AI Product Design</li><li>Cost Tradeoff Analysis</li><li>Scope Prioritization</li></ul></div>
+</div>
+<section class="case"><h2>overview</h2><p>glasspane is a translucent desktop overlay for taking notes during meetings, with a one-click AI recap that turns raw notes into clear decisions and action items. Over five weeks, I took it from end to end: defining my own needs as the first user, scoping the requirements, building the app in Tauri (Rust/Preact), and choosing the model behind it.</p></section>
+<section class="case"><h2>problem</h2><p>In back-to-back meetings, I type notes quickly in shorthand that is hard to understand later. Cleaning them up took around 20 minutes per meeting, so many notes sat unprocessed in my notes app until they were forgotten. Typing in a separate app also pulled my attention away from the people on the call, and since nothing showed which notes I had already filed, the backlog stayed invisible.</p></section>
+<section class="case"><h2>target users</h2><p>I started with my own workflow as a student and intern moving between classes, internship syncs, and organization meetings, then widened the scope to anyone who takes live notes on video calls.</p></section>
+<section class="case"><h2>pain points</h2><p>Mapping my own note-taking process surfaced 3 points of friction. Switching to a separate notes app broke my focus on the call, my rushed shorthand needed a second pass before it made sense, and nothing showed which notes had been saved somewhere permanent, so important details slipped through. These became the MVP's three must-have requirements: keep users visually present on the call, turn shorthand into clear notes in one step, and show which notes still need to be saved.</p></section>
+<section class="case"><h2>solution</h2><p>I turned each pain point into a requirement and shipped 3 core features. I also descoped automatic Google Docs filing, since two days of OAuth work would only save a 15-second copy and paste:</p><div class="boxes boxes-3"><div class="box"><h3>Stay present on the call</h3><p>A frameless overlay floats above the video call, and its background can turn fully transparent while the notes stay readable, so clicks pass through to the call while I listen.</p></div><div class="box"><h3>Organize notes in one click</h3><p>Claude turns raw notes into a structured recap with a summary, decisions, action items, and open questions that I can edit right in the overlay.</p></div><div class="box"><h3>Make the backlog visible</h3><p>Each note is marked as &quot;to file&quot; or &quot;in Docs,&quot; and an unfiled count in the title bar shows what still needs to be saved.</p></div></div></section>
+</main>
+<section aria-label="Photos" class="detail-photos detail-photos-2">
+<figure class="row-fig"><img src="../assets/glasspane-before.jpg" alt="Raw meeting notes typed in shorthand in Apple Notes"/><figcaption><strong>Before:</strong> raw notes typed live during a meeting, with data, decisions, and to-dos mixed together in shorthand.</figcaption></figure>
+<figure class="row-fig"><img src="../assets/glasspane-after.jpg" alt="The same notes organized by glasspane into a summary and labeled sections"/><figcaption><strong>After:</strong> one click turns the same notes into a summary and labeled sections, and flags 6 items that still need to be filed.</figcaption></figure>
+</section>
+<div class="detail detail-rest">
+<section class="case"><h2>impact</h2><p>Matching each decision to the real size of the problem kept the product fast to use and cheap to run:</p><div class="boxes boxes-2"><div class="box"><h3>Review cut to &lt;1 minute</h3><p>Post-meeting review dropped from 20 minutes to less than 1, since notes now come out organized and ready to be used later for reflection.</p></div><div class="box"><h3>5x lower inference cost</h3><p>Scoping the recap as a low-difficulty sorting task led me to choose Claude Haiku over frontier models, bringing the cost to about half a cent per meeting.</p></div></div></section>
+<a class="back" href="../index.html#projects">back to projects</a>
+</div>
+<footer class="site-footer">
+<div class="wrap">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/nicoleunguyen/"><i class="fa-brands fa-linkedin icon-linkedin"></i></a>
+<a aria-label="GitHub" href="https://github.com/bjorwol"><i class="fa-brands fa-github"></i></a>
+<a aria-label="Email" href="mailto:nicoleunnguyen@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+</div>
+</footer>
+</body>
+</html>

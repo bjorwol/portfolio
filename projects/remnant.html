@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Remnant | Nicole Nguyen</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Manrope:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<div class="wrap">
+<a class="logo" href="../index.html">nicole nguyen</a>
+<nav aria-label="Main" class="menu">
+<a href="../index.html">home</a>
+<a href="../index.html#projects">projects</a>
+<a href="../about.html">about me</a>
+</nav>
+</div>
+</header>
+<main class="detail">
+<h1>Remnant</h1>
+<div aria-hidden="true" class="detail-hero" style="background-image: url('../assets/hero-remnant.jpg')"></div>
+<div class="meta">
+<div><h2>role</h2><p>UI/UX &amp; Narrative Design, Gameplay Programming</p></div>
+<div><h2>timeline</h2><p>Apr - Jun 2026</p></div>
+<div><h2>context</h2><p>CS247G, Stanford</p></div>
+<div><h2>key skills</h2><ul><li>MVP Scoping</li><li>Usability Testing</li><li>Interaction Design</li><li>Accessibility Design</li></ul></div>
+</div>
+<section class="case"><h2>overview</h2><p>Remnant is a point-and-click horror game where players return to a fictional island town to lift the curses afflicting three friends, uncovering the colonial history behind each curse along the way. On a three-person team, I led UI/UX and narrative design and programmed gameplay in Ren'Py, taking the game from concept to a complete, playable MVP in a four-week build.</p></section>
+<section class="case"><h2>problem</h2><p>Most strategy and simulation games about colonialism reward players for settling and conquering new land, and few ask players to examine the harm it caused. We saw a gap for a narrative game that shows how colonial history still shapes the present, using horror and mystery to make that history feel personal and asking players to slow down and pay attention.</p><figure class="case-figure"><img src="../assets/remnant-mindmap.jpg" alt="Hand-drawn mind map of Remnant branching into player goal, mystery, visual style, restraints, key themes, locations, and technical structure"><figcaption>Our team's initial mind map, used to scope Remnant's player goals, key themes, locations, visual style, and constraints before we started building.</figcaption></figure></section>
+<section class="case"><h2>target users</h2><p>We designed for players who enjoy narrative games, puzzles, and mysteries, including people with little background in colonial history or point-and-click games. To make the game easy to learn without prior context, every location follows the same loop: explore, collect clues, and use them to solve a puzzle.</p></section>
+<section class="case"><h2>pain points</h2><p>Across 10 playtests, most frustration came from the interface rather than the puzzles themselves. Players needed outside help to understand the core ledger puzzle, missed items they had picked up because the pickup was buried in dense dialogue, couldn't tell when a clue pointed to another location, and sometimes clicked leave by mistake, losing one of their limited daily visits with no way to undo it.</p></section>
+  </main>
+  <section class="detail-photos" aria-label="Playtest photos">
+    <img src="../assets/remnant-playtest-1.jpg" alt="A playtester thinking through a puzzle during an in-class playtest">
+    <img src="../assets/remnant-playtest-2.jpg" alt="A playtester exploring Remnant on a laptop">
+    <img src="../assets/remnant-playtest-3.jpg" alt="A playtester exploring Remnant on a laptop at home">
+  </section>
+  <div class="detail detail-rest">
+<section class="case"><h2>solution</h2><p>I scoped the game to a complete MVP with 3 puzzles, a 5-day time limit, and 3 branching endings, then used each playtest round to remove accidental friction while keeping the puzzles challenging:</p><div class="boxes boxes-3"><div class="box"><h3>Rebuilt the ledger puzzle</h3><p>Players now match 8 worker ID numbers to real names one pair at a time, with each correct row turning green and a violin note confirming the match.</p></div><div class="box"><h3>Made clues stand out</h3><p>Collected items appear in red bold and location hints in yellow bold, while an auto-logging journal records every clue so players don't have to memorize them.</p></div><div class="box"><h3>Protected player progress</h3><p>A confirmation prompt now appears before players leave a location, so a mistaken click no longer costs one of their limited daily visits.</p></div></div></section>
+</div>
+<section aria-label="Photos" class="detail-photos detail-photos-mid detail-photos-2">
+<img alt="The ledger puzzle: a colonial rubber plantation ledger beside a 1897 census, with correctly matched rows highlighted in green" src="../assets/remnant-ledger.jpg"/>
+<img alt="An item pickup shown in red bold dialogue, and the investigation journal listing collected clues with location hints in yellow" src="../assets/remnant-clues.jpg"/>
+</section>
+<div class="detail detail-rest">
+<section class="case"><h2>impact</h2><p>By the final playtest, players could solve puzzles on their own and stayed invested in the story through the ending:</p><div class="boxes boxes-2"><div class="box"><h3>Solved unaided in 2-3 minutes</h3><p>The ledger puzzle went from needing outside guidance to being figured out within seconds, with players reasoning aloud about the workers' lives as they solved it.</p></div><div class="box"><h3>No more lost progress</h3><p>Playtesters who clicked leave by mistake stopped at the confirmation prompt and chose to stay, eliminating accidental progress loss.</p></div></div></section>
+<a class="back" href="../index.html#projects">back to projects</a>
+</div>
+<footer class="site-footer">
+<div class="wrap">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/nicoleunguyen/"><i class="fa-brands fa-linkedin icon-linkedin"></i></a>
+<a aria-label="GitHub" href="https://github.com/bjorwol"><i class="fa-brands fa-github"></i></a>
+<a aria-label="Email" href="mailto:nicoleunnguyen@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+</div>
+</footer>
+</body>
+</html>
