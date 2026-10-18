@@ -5,6 +5,17 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>glasspane | Nicole Nguyen</title>
+  <meta name="description" content="A translucent meeting notes overlay with a one-click AI recap, taken from scoping to shipped app.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nicole Nguyen">
+  <meta property="og:title" content="glasspane | Nicole Nguyen">
+  <meta property="og:description" content="A translucent meeting notes overlay with a one-click AI recap, taken from scoping to shipped app.">
+  <meta property="og:url" content="https://nicoleunguyen.com/projects/glasspane.html">
+  <meta property="og:image" content="https://nicoleunguyen.com/assets/hero-glasspane.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Manrope:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
@@ -35,7 +46,7 @@
 <section class="case"><h2>problem</h2><p>In back-to-back meetings, I type notes quickly in shorthand that is hard to understand later. Cleaning them up took around 20 minutes per meeting, so many notes sat unprocessed in my notes app until they were forgotten. Typing in a separate app also pulled my attention away from the people on the call, and since nothing showed which notes I had already filed, the backlog stayed invisible.</p></section>
 <section class="case"><h2>target users</h2><p>I started with my own workflow as a student and intern moving between classes, internship syncs, and organization meetings, then widened the scope to anyone who takes live notes on video calls.</p></section>
 <section class="case"><h2>pain points</h2><p>Mapping my own note-taking process surfaced 3 points of friction. Switching to a separate notes app broke my focus on the call, my rushed shorthand needed a second pass before it made sense, and nothing showed which notes had been saved somewhere permanent, so important details slipped through. These became the MVP's three must-have requirements: keep users visually present on the call, turn shorthand into clear notes in one step, and show which notes still need to be saved.</p></section>
-<section class="case"><h2>solution</h2><p>I turned each pain point into a requirement and shipped 3 core features. I also descoped automatic Google Docs filing, since two days of OAuth work would only save a 15-second copy and paste:</p><div class="boxes boxes-3"><div class="box"><h3>Stay present on the call</h3><p>A frameless overlay floats above the video call, and its background can turn fully transparent while the notes stay readable, so clicks pass through to the call while I listen.</p></div><div class="box"><h3>Organize notes in one click</h3><p>Claude turns raw notes into a structured recap with a summary, decisions, action items, and open questions that I can edit right in the overlay.</p></div><div class="box"><h3>Make the backlog visible</h3><p>Each note is marked as &quot;to file&quot; or &quot;in Docs,&quot; and an unfiled count in the title bar shows what still needs to be saved.</p></div></div></section>
+<section class="case"><h2>solution</h2><p>I shipped one core feature for each requirement. I also descoped automatic Google Docs filing, since two days of OAuth work would only save a 15-second copy and paste:</p><div class="boxes boxes-3"><div class="box"><h3>Stay present on the call</h3><p>A frameless overlay floats above the video call, and its background can turn fully transparent while the notes stay readable, so clicks pass through to the call while I listen.</p></div><div class="box"><h3>Organize notes in one click</h3><p>Claude turns raw notes into a structured recap with a summary, decisions, action items, and open questions that I can edit right in the overlay.</p></div><div class="box"><h3>Make the backlog visible</h3><p>Each note is marked as &quot;to file&quot; or &quot;in Docs,&quot; and an unfiled count in the title bar shows what still needs to be saved.</p></div></div></section>
 </main>
 <section aria-label="Photos" class="detail-photos detail-photos-2">
 <figure class="row-fig"><img src="../assets/glasspane-before.jpg" alt="Raw meeting notes typed in shorthand in Apple Notes"/><figcaption><strong>Before:</strong> raw notes typed live during a meeting, with data, decisions, and to-dos mixed together in shorthand.</figcaption></figure>

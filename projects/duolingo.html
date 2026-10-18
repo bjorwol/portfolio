@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Duolingo Local | Nicole Nguyen</title>
+  <meta name="description" content="A feature concept adding optional regional Spanish lessons to the Duolingo course, starting with everyday Mexican expressions.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nicole Nguyen">
+  <meta property="og:title" content="Duolingo Local | Nicole Nguyen">
+  <meta property="og:description" content="A feature concept adding optional regional Spanish lessons to the Duolingo course, starting with everyday Mexican expressions.">
+  <meta property="og:url" content="https://nicoleunguyen.com/projects/duolingo.html">
+  <meta property="og:image" content="https://nicoleunguyen.com/assets/hero-duolingo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="Nicole Nguyen">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Manrope:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<div class="wrap">
+<a class="logo" href="../index.html">nicole nguyen</a>
+<nav aria-label="Main" class="menu">
+<a href="../index.html">home</a>
+<a href="../index.html#projects">projects</a>
+<a href="../about.html">about me</a>
+</nav>
+</div>
+</header>
+<main class="detail">
+<h1>Duolingo Local: regional Spanish lessons</h1>
+<div aria-hidden="true" class="detail-hero" style="background-image: url('../assets/hero-duolingo.jpg')"></div>
+<div class="meta">
+<div><h2>role</h2><p>Product Manager</p></div>
+<div><h2>timeline</h2><p>Oct 2026</p></div>
+<div><h2>context</h2><p>Personal project</p></div>
+<div><h2>key skills</h2><ul><li>Feature Scoping</li><li>Hypothesis Framing</li><li>Edge Case Design</li><li>Experiment Design</li></ul></div>
+</div>
+<section class="case"><h2>overview</h2><p>Duolingo Local is a feature concept that adds optional, bite-sized lessons on regional Spanish inside the existing Spanish course, starting with common Mexican expressions. I scoped it as a product manager would: naming the learner problem, writing the hypothesis the feature is betting on, designing the entry point and the lesson itself, deciding what stays out of the MVP, working through the edge cases that make regional content hard, and defining how I would know whether it worked.</p></section>
+<section class="case"><h2>problem</h2><p>Duolingo teaches foundational Spanish well, but a learner who finishes several units can still be lost in a real conversation. Regional slang and everyday expressions are what native speakers actually use, and they are the part of the language the course does not cover. The gap shows up at exactly the moment learners care about most, which is talking to someone. Duolingo's own documentation acknowledges that Spanish varies across regions, which makes the case for teaching that variation directly rather than leaving learners to discover it on their own.</p></section>
+<section class="case"><h2>target users</h2><p>I designed for Spanish learners at every proficiency level who want to understand regional expressions and speak more naturally with native speakers. This is a deliberately wide segment rather than an advanced-only one, since a beginner who learns that an expression exists benefits as much as an advanced learner who already recognizes it. Spanish is also the right language to start with, since it ranks first among the languages that attract Duolingo's most dedicated learners.</p></section>
+<section class="case"><h2>hypothesis</h2><p>Giving learners opportunities to practice Spanish that is relevant to their real-world goals will motivate them to complete more lessons. Stating the bet this plainly is what made the rest of the work tractable, because it set a single question for the experiment to answer and kept features that would not move it out of the MVP.</p></section>
+<section class="case"><h2>solution</h2><p>The feature needs to be discoverable without getting in the way of the course someone already signed up for, so I designed the entry point as an optional node beside the existing path:</p><div class="boxes boxes-3"><div class="box"><h3>An optional node on the path</h3><p>A local Spanish node appears beside the existing course path, so learners find it in the place they already look rather than in a menu.</p></div><div class="box"><h3>A short popup explains the value</h3><p>A brief popup introduces regional language learning in one sentence, so a learner can judge whether they want it without opening a lesson.</p></div><div class="box"><h3>Explore or dismiss, with no penalty</h3><p>Learners can dismiss the feature and continue their course untouched, and the entry point stays available if they change their mind later.</p></div></div></section>
+</main>
+<section aria-label="Screens" class="detail-photos detail-photos-1">
+<figure class="row-fig"><img src="../assets/duo-entry.jpg" alt="The Duolingo course path with a local Spanish node and an Explore Local Spanish popup beside it"/><figcaption><strong>Entry point:</strong> the node sits next to the existing path and the popup explains the feature in one line, so the main course is never interrupted.</figcaption></figure>
+</section>
+<div class="detail detail-rest">
+<section class="case"><h2>on implementation</h2><p>Keeping the entry point simple depended on a few decisions about how the feature plugs into the course that already exists:</p><div class="boxes boxes-2"><div class="box"><h3>No new gating</h3><p>The feature is available to Spanish learners regardless of proficiency. It uses existing Spanish-course enrollment, so there is no additional placement test to pass before a learner can try it.</p></div><div class="box"><h3>No change to the main path</h3><p>The core learning path and a learner's progress through it remain unchanged, which is what makes the feature safe to add to a course people are already partway through.</p></div></div></section>
+<section class="case"><h2>learning the expressions</h2><p>Once a learner opts in, the lesson itself reuses formats they already know, so the only new thing they are learning is the language:</p><div class="boxes boxes-4"><div class="box"><h3>Choose a region</h3><p>Mexico is available at launch, and learners can request the region they want next, which doubles as demand data for where to expand.</p></div><div class="box"><h3>Practice in minutes</h3><p>Lessons reuse Duolingo's existing exercise formats, so a session runs about five minutes and feels like the rest of the course.</p></div><div class="box"><h3>Learn conversational context</h3><p>Explanations teach meaning, usage, and formality, rather than presenting an expression as a vocabulary word with one translation.</p></div><div class="box"><h3>Beginner-friendly by default</h3><p>Expressions come with English translations and context, and no advanced grammar is required to get through a lesson.</p></div></div></section>
+</div>
+<section aria-label="Screens" class="detail-photos detail-photos-2">
+<figure class="row-fig"><img src="../assets/duo-region.jpg" alt="A bottom sheet asking where the learner wants to practice Spanish, with Mexico available and a dropdown to request another region"/><figcaption><strong>Choosing a region:</strong> Mexico is available at launch, and the request field below it collects demand for the regions to build next.</figcaption></figure>
+<figure class="row-fig"><img src="../assets/duo-exercise.jpg" alt="A multiple-choice exercise asking what the expression Que onda means, with audio and three answer options"/><figcaption><strong>Inside a lesson:</strong> a familiar multiple-choice format carries the new content, with audio and a plain-language note on how the expression is used.</figcaption></figure>
+</section>
+<div class="detail detail-rest">
+<section class="case"><h2>what the MVP includes</h2><p>Scoping this tightly mattered more than usual, since regional content is expensive to produce and maintain. I kept the first version small enough to test the hypothesis and nothing larger:</p><div class="boxes boxes-3"><div class="box"><h3>In scope</h3><p>Mexican Spanish, 10 curated expressions, and one lesson of roughly five minutes.</p></div><div class="box"><h3>Out of scope</h3><p>Additional regions, advanced personalization, and AI-powered practice, none of which are needed to find out whether learners want this.</p></div><div class="box"><h3>Future expansion</h3><p>Additional Spanish-speaking regions first, followed by regional variations in other languages once the pattern is proven.</p></div></div></section>
+<section class="case"><h2>building on what already exists</h2><p>The MVP is cheap to build because almost none of it is new. Each piece maps onto something the product already has:</p><div class="boxes boxes-3"><div class="box"><h3>Learning path</h3><p>Lessons are optional and sit alongside the course, so core-course progress rules do not change.</p></div><div class="box"><h3>Rewards</h3><p>The feature reuses the existing XP, streak, and Energy rules rather than introducing a separate reward system.</p></div><div class="box"><h3>Development</h3><p>Audio, multiple-choice, and lesson-completion components are all reused from the existing course.</p></div></div></section>
+<section class="case"><h2>edge cases</h2><p>Regional language is the kind of content that goes wrong quietly, since a learner usually cannot tell that an expression is outdated or wrong for their city. I worked through the four failure modes that worried me most and decided how each one would be handled:</p><div class="table-wrap"><table class="case-table">
+<thead><tr><th scope="col">Edge case</th><th scope="col">Proposed solution</th></tr></thead>
+<tbody>
+<tr><th scope="row">Geographic variation</th><td>Label city or state-specific usage when it is relevant, and avoid presenting one expression as true countrywide</td></tr>
+<tr><th scope="row">Outdated expressions</th><td>Schedule periodic native-speaker reviews, then update or retire content that has fallen out of use</td></tr>
+<tr><th scope="row">Multiple meanings</th><td>Accept contextually valid answers and briefly explain the alternatives rather than marking the learner wrong</td></tr>
+<tr><th scope="row">Social context</th><td>Explain formality, audience, and when an expression is appropriate to use</td></tr>
+</tbody></table></div><p class="case-note">Content maintenance runs alongside these: learners can flag an expression as inaccurate or outdated, which feeds the review cycle rather than waiting for a scheduled audit to catch it.</p></section>
+<section class="case"><h2>how I would know it worked</h2><p>I would validate demand before building anything, then run a controlled experiment rather than shipping to everyone and reading the dashboard afterward:</p><div class="boxes boxes-3"><div class="box"><h3>1. Validate before building</h3><p>Test a clickable preview to gauge whether learners want regional lessons at all, and assess comprehension before and after a lesson to check that the format teaches anything.</p></div><div class="box"><h3>2. Run an A/B experiment</h3><p>Randomly assign Spanish learners to the existing course as control, or the course with Local as treatment.</p></div><div class="box"><h3>3. Measure against one primary KPI</h3><p>Average weekly Spanish lessons completed per eligible learner, which is the metric the hypothesis actually predicts.</p></div></div></section>
+<section class="case"><h2>the supporting metrics</h2><p>Three more metrics sit under the primary KPI, each answering a different question about whether the feature is working:</p><div class="boxes boxes-3"><div class="box"><h3>Initial interest</h3><p>Feature discovery click-through rate, which shows whether the entry point and its popup are doing their job.</p></div><div class="box"><h3>Participation</h3><p>Local lesson completion rate, which separates learners who were curious from learners who found the content worth finishing.</p></div><div class="box"><h3>Guardrail</h3><p>Core-course lesson completion rate, which protects the engagement the feature is meant to add to rather than pull from.</p></div></div><p class="case-note">Expansion criteria: increased lesson engagement and comprehension, without harming core-course progression.</p></section>
+<a class="back" href="../index.html#projects">back to projects</a>
+</div>
+<footer class="site-footer">
+<div class="wrap">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/nicoleunguyen/"><i class="fa-brands fa-linkedin icon-linkedin"></i></a>
+<a aria-label="GitHub" href="https://github.com/bjorwol"><i class="fa-brands fa-github"></i></a>
+<a aria-label="Email" href="mailto:nicoleunnguyen@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+</div>
+</footer>
+</body>
+</html>

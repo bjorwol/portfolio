@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Letterboxd: context-aware recommendations | Nicole Nguyen</title>
+  <meta name="description" content="An AI feature concept that recommends a film from your Letterboxd watchlist based on your mood and the time you have.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nicole Nguyen">
+  <meta property="og:title" content="Letterboxd: context-aware recommendations | Nicole Nguyen">
+  <meta property="og:description" content="An AI feature concept that recommends a film from your Letterboxd watchlist based on your mood and the time you have.">
+  <meta property="og:url" content="https://nicoleunguyen.com/projects/letterboxd.html">
+  <meta property="og:image" content="https://nicoleunguyen.com/assets/hero-letterboxd.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Manrope:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<div class="wrap">
+<a class="logo" href="../index.html">nicole nguyen</a>
+<nav aria-label="Main" class="menu">
+<a href="../index.html">home</a>
+<a href="../index.html#projects">projects</a>
+<a href="../about.html">about me</a>
+</nav>
+</div>
+</header>
+<main class="detail">
+<h1>Letterboxd: context-aware recommendations</h1>
+<div aria-hidden="true" class="detail-hero" style="background-image: url('../assets/hero-letterboxd.jpg')"></div>
+<div class="meta">
+<div><h2>role</h2><p>Product Manager</p></div>
+<div><h2>timeline</h2><p>Oct 2026</p></div>
+<div><h2>context</h2><p>Personal project</p></div>
+<div><h2>key skills</h2><ul><li>AI Product Design</li><li>Assumption Mapping</li><li>Edge Case Design</li><li>Experiment Design</li></ul></div>
+</div>
+<section class="case"><h2>overview</h2><p>Letterboxd is a social platform where film fans log, rate, and review what they watch, and save films they want to see to a watchlist. As a personal project, I designed Help me pick a film, a feature that reads a user's watchlist alongside the context of the moment they are in, then returns the few films that actually fit. I scoped it end to end: defining the customer and the problem, writing down the assumptions the feature rests on, designing the flow and its edge cases, and setting the metrics that would show whether it worked.</p></section>
+<section class="case"><h2>problem</h2><p>Users save films to a watchlist with every intention of watching them, then face a list of hundreds when the moment comes. Finding one that fits means manually evaluating many options across several sources: scrolling the watchlist, comparing films, reading reviews, checking runtimes, and looking up streaming availability. That work often ends in no decision at all, with users running out of time or energy before they choose. The pattern is common enough that users describe it themselves in the Letterboxd community:</p></section>
+</main>
+<section aria-label="Screens" class="detail-photos detail-photos-2">
+<figure class="row-fig"><img src="../assets/lb-reddit-1.jpg" alt="A Reddit post in r/Letterboxd titled My watchlist is so overwhelming, describing the paradox of choice and a growing pile of shortlists"/><figcaption><strong>Evidence:</strong> users build shortlists on top of shortlists and still cannot choose, a post with 196 upvotes and 76 comments.</figcaption></figure>
+<figure class="row-fig"><img src="../assets/lb-reddit-2.jpg" alt="A Reddit post in r/Letterboxd titled Does anyone else have paralysis choosing a movie, describing browsing a 400-film watchlist for an hour"/><figcaption><strong>Evidence:</strong> a user browses a 400-film watchlist for an hour, then runs out of time to watch anything, with 200 upvotes and 64 comments.</figcaption></figure>
+</section>
+<div class="detail detail-rest">
+<section class="case"><h2>target users</h2><p>I scoped the feature to active Letterboxd users who review films, maintain a watchlist, and already use the platform to decide what to watch. The moment I designed for is narrow on purpose. They are ready to watch something now and want to choose from films they have already saved, rather than discover something new from the full catalog.</p></section>
+<section class="case"><h2>pain points</h2><p>When these users decide what to watch, they browse the watchlist, compare films, and read reviews while weighing six factors at once: their current mood, the time they have, who they are watching with, the viewing experience they want, ratings, and streaming availability. Letterboxd supports none of those factors directly. Sorting and filtering work on fixed attributes like release year and runtime, so everything about the moment itself stays in the user's head and has to be re-applied to every film they consider.</p></section>
+<section class="case"><h2>why Letterboxd</h2><p>Letterboxd already holds both halves of the solution, which is what makes this a scoping problem rather than a data problem:</p><div class="boxes boxes-2"><div class="box"><h3>Existing data</h3><p>Watchlists, ratings and likes, viewing history, and film metadata already live on the platform for every active user.</p></div><div class="box"><h3>Existing functionality</h3><p>Sorting, filtering, and recommendations based on watched and liked films are already built, and Letterboxd describes the platform itself as one large organic recommendation engine without a section labeled as such.</p></div></div><p class="case-note">The opportunity is to combine these existing preference signals with real-time context to recommend relevant films.</p></section>
+<section class="case"><h2>assumptions</h2><p>Before designing anything, I wrote down the three assumptions this feature depends on, so the experiment could be built to test them rather than to confirm them:</p><div class="boxes boxes-3"><div class="box"><h3>1. The problem is widespread</h3><p>A meaningful segment of active watchlist users have difficulty selecting a movie to watch.</p></div><div class="box"><h3>2. Letterboxd is where they decide</h3><p>Users turn to Letterboxd at the moment they are trying to make a decision, rather than deciding elsewhere and logging it after.</p></div><div class="box"><h3>3. Context is the missing input</h3><p>Context-aware recommendations would improve selection confidence, reduce decision time, or both.</p></div></div></section>
+<section class="case"><h2>solution</h2><p>I placed a single entry point at the top of the watchlist, so the feature sits exactly where the decision already happens and nothing else about the page changes:</p></section>
+</div>
+<section aria-label="Screens" class="detail-photos detail-photos-2">
+<figure class="row-fig"><img src="../assets/lb-entry-before.jpg" alt="The current Letterboxd watchlist, a grid of film posters with no recommendation entry point"/><figcaption><strong>Before:</strong> the watchlist opens as a wall of posters, leaving the user to scan and compare on their own.</figcaption></figure>
+<figure class="row-fig"><img src="../assets/lb-entry-after.jpg" alt="The same watchlist with a Help me pick a film button added above the poster grid"/><figcaption><strong>After:</strong> one Help me pick a film button sits above the grid, and the rest of the page is untouched.</figcaption></figure>
+</section>
+<div class="detail detail-rest">
+<section class="case"><h2>capturing preferences</h2><p>The feature asks two questions and offers one open field, which is the smallest input that still captures the context behind a decision. Keeping it short matters, since a long questionnaire would recreate the work the feature is meant to remove:</p><div class="boxes boxes-3"><div class="box"><h3>What kind of film are you in the mood for?</h3><p>Captures the experience someone wants from watching a movie at that particular moment. Users pick up to two options, or choose Surprise me to clear the selections.</p></div><div class="box"><h3>How much time do you have?</h3><p>Makes sure recommendations fit the user's real time constraints, with Any length available when there are none.</p></div><div class="box"><h3>Anything else?</h3><p>An optional free-text field lets users name specific preferences that preset options would miss, such as watching with friends or avoiding horror.</p></div></div></section>
+</div>
+<section aria-label="Screens" class="detail-photos detail-photos-2">
+<figure class="row-fig"><img src="../assets/lb-preferences.jpg" alt="The Help me pick a film sheet, showing mood chips, time options, and an optional free-text field"/><figcaption><strong>Input:</strong> mood and time are preset chips so the common cases take two taps, with free text for everything else.</figcaption></figure>
+<figure class="row-fig"><img src="../assets/lb-recommendations.jpg" alt="Your picks for tonight, showing three recommended films each with a Why this fits explanation"/><figcaption><strong>Output:</strong> each pick carries its runtime, genre, rating, and a Why this fits line, so the user can accept or reject it without opening the film.</figcaption></figure>
+</section>
+<div class="detail detail-rest">
+<section class="case"><h2>the tradeoff I made</h2><p>Recommending only from the watchlist was the central product decision, and it costs something real, so I designed the mitigation alongside it:</p><div class="boxes boxes-3"><div class="box"><h3>Prioritized</h3><p>Existing user intent. Every recommendation comes from films the user already chose to save, which makes each pick easier to trust.</p></div><div class="box"><h3>Sacrificed</h3><p>Recommendation breadth. A film that would fit perfectly but was never saved will not be surfaced.</p></div><div class="box"><h3>Mitigated</h3><p>Users can adjust their preferences in place, and every result state offers a path to explore films beyond the watchlist.</p></div></div></section>
+<section class="case"><h2>how a match is scored</h2><p>To keep the recommendations defensible rather than opaque, I proposed an explicit scoring model and the thresholds that decide what gets shown. The weights lean on the moment first and on history second, since historical taste alone is what Letterboxd already does:</p><div class="formula">
+<p class="formula-eq">Match Score = 0.5M + 0.3T + 0.2P</p>
+<ul class="formula-key">
+<li><strong>50% (M)</strong> desired viewing experience</li>
+<li><strong>30% (T)</strong> historical taste, from ratings, likes, and viewing history</li>
+<li><strong>20% (P)</strong> additional preferences, if the user provided any</li>
+</ul>
+<p class="formula-note">Each factor is scored 0 to 100. These are proposed initial weights, subject to validation. When no additional preferences are given, that weight is redistributed across viewing experience and historical taste.</p>
+</div><div class="table-wrap"><table class="case-table">
+<thead><tr><th scope="col">Classification</th><th scope="col">Proposed criteria</th></tr></thead>
+<tbody>
+<tr><th scope="row">Top match</th><td>Meets all hard constraints and scores 80 or above</td></tr>
+<tr><th scope="row">Close match</th><td>Scores 60 to 79, or narrowly misses a flexible constraint</td></tr>
+<tr><th scope="row">No suitable match</th><td>Low relevance, or violates a non-negotiable constraint</td></tr>
+</tbody></table></div></section>
+</div>
+<section aria-label="Screens" class="detail-photos detail-photos-1">
+<figure class="row-fig"><img src="../assets/lb-scoring.jpg" alt="A result screen showing one top match and one close match, with an explanation of why each fits"/><figcaption><strong>Scoring in the UI:</strong> a top match and a close match are labeled separately, and the close match explains exactly which constraint it misses and by how much.</figcaption></figure>
+</section>
+<div class="detail detail-rest">
+<section class="case"><h2>edge cases</h2><p>Most of the design work went into what happens when the ideal case does not hold, since a recommendation feature that only works on a full watchlist with perfect matches would fail quietly. I defined a distinct state for each case, and each one explains what the system looked for before offering a way forward:</p><div class="boxes boxes-3"><div class="box"><h3>Only 1 to 2 strong matches</h3><p>Show only those matches instead of padding the list to three, and say how many of the watchlist's films fit everything the user asked for.</p></div><div class="box"><h3>No strong matches</h3><p>Name the preferences that were used, then offer two paths: adjust mood or available time, or explore films based on past likes.</p></div><div class="box"><h3>Empty watchlist</h3><p>Skip the recommendation attempt and offer to add films or browse the broader catalog, so a new user never hits a dead end.</p></div></div></section>
+</div>
+<section aria-label="Screens" class="detail-photos detail-photos-3">
+<figure class="row-fig"><img src="../assets/lb-edge-few.jpg" alt="A result screen showing two matches with a note that 2 of 20 films fit everything asked for"/><figcaption><strong>1 to 2 matches</strong> Two picks, with the count stated plainly.</figcaption></figure>
+<figure class="row-fig"><img src="../assets/lb-edge-none.jpg" alt="A no close matches screen listing the preferences used and offering to adjust preferences or explore films"/><figcaption><strong>No matches</strong> What was searched, then two ways forward.</figcaption></figure>
+<figure class="row-fig"><img src="../assets/lb-edge-empty.jpg" alt="An empty watchlist screen offering to add films or explore films based on likes"/><figcaption><strong>Empty watchlist</strong> An invitation instead of an error.</figcaption></figure>
+</section>
+<div class="detail detail-rest">
+<section class="case"><h2>how I would know it worked</h2><p>I would evaluate the feature with an A/B test comparing the existing watchlist against the AI-assisted experience, measuring whether users actually watch what they pick rather than whether they engage with the feature:</p><div class="boxes boxes-3"><div class="box"><h3>Primary metric</h3><p>The share of recommendation sessions that result in a recommended film being logged within 7 days.</p></div><div class="box"><h3>Secondary metrics</h3><p>The share of sessions where a user taps View Film on a recommendation, and median time to film selection, targeting a 20% reduction against control without reducing selection satisfaction.</p></div><div class="box"><h3>Guardrail</h3><p>The share of sessions where at least one recommendation violates an explicit user constraint, which protects the trust the Why this fits explanations are built on.</p></div></div></section>
+<a class="back" href="../index.html#projects">back to projects</a>
+</div>
+<footer class="site-footer">
+<div class="wrap">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/nicoleunguyen/"><i class="fa-brands fa-linkedin icon-linkedin"></i></a>
+<a aria-label="GitHub" href="https://github.com/bjorwol"><i class="fa-brands fa-github"></i></a>
+<a aria-label="Email" href="mailto:nicoleunnguyen@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+</div>
+</footer>
+</body>
+</html>
